@@ -77,7 +77,7 @@ func validateInput(cardNumber string) bool {
 // validateLuhn проверяет номер карты по алгоритму Луна
 func validateLuhn(cardNumber string) bool {
 	sum := 0
-	double := false
+	isEven := false
 	for i := len(cardNumber) - 1; i >= 0; i-- {
 		digit := int(cardNumber[i] - '0')
 		if double {
