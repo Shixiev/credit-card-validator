@@ -49,7 +49,9 @@ func loadBankData(path string) ([]Bank, error) {
 			BinTo:   to,
 		})
 	}
-
+	if err := scanner.Err(); err != nil {
+		return nil, fmt.Errorf("Ошибка чтения файля %s: %w", part, err)
+    }
 	return banks, scanner.Err()
 }
 
